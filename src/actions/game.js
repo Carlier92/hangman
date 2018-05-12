@@ -8,7 +8,7 @@ export const lettersGuessed = (guess) => {
   }
 }
 
-export const NewGameStart = (RandomWord) => {
+export const newGameStart = (RandomWord) => {
   return {
     type: NEW_GAME,
     payload: RandomWord
