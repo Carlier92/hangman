@@ -4,8 +4,6 @@ import { connect } from 'react-redux'
 import { lettersGuessed } from '../actions/game'
 import { wrongGuessLimit } from '../lib/gameLogic'
 
-
-
 class LettersToClick extends PureComponent {
     static propTypes = {
         lettersGuessed: PropTypes.func.isRequired
@@ -17,13 +15,11 @@ class LettersToClick extends PureComponent {
 
     render() {
         const alphabet = Array.from({length: 26}, (_, i) => String.fromCharCode(97 + i))
-        console.log(this.props.lost);
+        
         return (
             <div>
                 {alphabet.map( letter => {
-                    let used = false;
-                    console.log(this.props.lettersGuessed);
-                    return <button key={letter} disabled={this.props.lost || used} onClick={() => {this.props.lettersGuessed(letter)}}>{letter}</button>
+                    return <button key={letter} disabled={this.props.lost} onClick={() => {this.props.lettersGuessed(letter)}}>{letter}</button>
                 })}
             </div>
         )
@@ -32,7 +28,6 @@ class LettersToClick extends PureComponent {
 
 const mapStateToProps = ({ selectedWord, lettersGuessed }) => {
     return {
-        lettersGuessed: lettersGuessed.join(', '),
         lost: wrongGuessLimit(selectedWord, lettersGuessed)
     }
 }
