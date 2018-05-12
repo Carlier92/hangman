@@ -8,10 +8,6 @@ class StartNewGameBtn extends PureComponent {
     newGameStart: PropTypes.func.isRequired
   }
 
-  // handleKeyPress = (e) => {
-  //   if (e.key === "Enter") this.props.startNewGame()
-  // }
-
   handleOnClick = () => {
     this.props.newGameStart()
   }
