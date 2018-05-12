@@ -1,12 +1,7 @@
-// import products from './products'
-// import product from './product'
-// import users from './users'
-// import login from './login'
-//
-//
-// export default {
-// 	products,
-// 	product,
-// 	users,
-// 	login
-// }
+import wordBeingGuessed from './wordBeingGuessed'
+import lettersGuessed from './lettersGuessed'
+
+export default {
+	wordBeingGuessed,
+    lettersGuessed
+}
