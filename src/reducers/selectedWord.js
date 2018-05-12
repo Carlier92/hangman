@@ -6,7 +6,6 @@ export default (state = randomWord(), { type } = {}) => {
     case NEW_GAME :
       return randomWord()
     default:
-    console.log(state);
       return state
   }
 }
