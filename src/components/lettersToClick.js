@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { lettersGuessed } from '../actions/game'
+import { wrongGuessLimit } from '../lib/gameLogic'
+
 
 
 class LettersToClick extends PureComponent {
@@ -15,15 +17,24 @@ class LettersToClick extends PureComponent {
 
     render() {
         const alphabet = Array.from({length: 26}, (_, i) => String.fromCharCode(97 + i))
-
+        console.log(this.props.lost);
         return (
             <div>
                 {alphabet.map( letter => {
-                    return <button key={letter} onClick={() => {this.props.lettersGuessed(letter)}}>{letter}</button>
+                    let used = false;
+                    console.log(this.props.lettersGuessed);
+                    return <button key={letter} disabled={this.props.lost || used} onClick={() => {this.props.lettersGuessed(letter)}}>{letter}</button>
                 })}
             </div>
         )
     }
 }
 
-export default connect(null, { lettersGuessed })(LettersToClick)
+const mapStateToProps = ({ selectedWord, lettersGuessed }) => {
+    return {
+        lettersGuessed: lettersGuessed.join(', '),
+        lost: wrongGuessLimit(selectedWord, lettersGuessed)
+    }
+}
+
+export default connect(mapStateToProps, { lettersGuessed })(LettersToClick)

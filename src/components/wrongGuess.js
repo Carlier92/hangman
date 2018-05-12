@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { showGuess, wrongGuessCount } from '../lib/gameLogic'
+import { showGuess, wrongGuessCount, gameFinished } from '../lib/gameLogic'
 
 class Word extends PureComponent {
   static propTypes = {
@@ -25,7 +25,8 @@ const mapStateToProps = ({ selectedWord, lettersGuessed }) => {
   return {
     hiddenWord: showGuess(selectedWord, lettersGuessed),
     numberOfTries: wrongGuessCount(selectedWord, lettersGuessed),
-    lettersGuessed: lettersGuessed.join(', ')
+    lettersGuessed: lettersGuessed.join(', '),
+    gameFinished: gameFinished(selectedWord, lettersGuessed)
   }
 }
 
