@@ -1,8 +1,10 @@
-// export const FETCHED_DETAILED_PRODUCT = 'FETCHED_DETAILED_PRODUCT'
+export const MAKE_GUESS = 'MAKE_GUESS'
+export const NEW_GAME = 'NEW_GAME'
+
 //
 //
 //
-// export const fetchProduct = (productId) => (dispatch) => {
+// export const fetchGame = (productId) => (dispatch) => {
 //     request
 //     .get(`${baseUrl}/products/${productId}`)
 //     .then(response => dispatch({

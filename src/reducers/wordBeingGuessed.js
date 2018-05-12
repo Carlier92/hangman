@@ -1,11 +1,11 @@
-// import {FETCHED_DETAILED_PRODUCT, UPDATE_PRODUCT} from '../actions/products'
+// import {MAKE_GUESSS, NEW_GAME} from '../actions/game'
 //
-// export default function (state = null, action) {
+// export default function (state = [], action) {
 //   switch (action.type) {
-//     case FETCHED_DETAILED_PRODUCT:
+//     case MAKE_GUESSS:
 //       return action.payload
 //
-//     case UPDATE_PRODUCT:
+//     case NEW_GAME:
 // 	  if (action.payload.id === state.id) {
 // 	    return action.payload
 // 	  }
@@ -13,5 +13,5 @@
 //
 //     default:
 //       return state
-//   }
+//    }
 // }
