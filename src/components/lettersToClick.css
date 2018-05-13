@@ -1,3 +1,31 @@
+
+button {
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    color: red;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: 'Hind Madurai', sans-serif;
+    transition: background-color 200ms ease-in;
+}
+
+button:hover:enabled {
+    background-color: #666666;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+button:focus {
+    outline: none;
+}
+
 .lettersBtn {
     font-size: 20px;
 }
@@ -10,22 +38,4 @@
     align-items: center;
     align-content: center;
     margin: auto;
-}
-
-button:hover {
-    color: black;
-    background-color: #666666;
-}
-
-button {
-    background-color: black;
-    border: none;
-    color: red;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    font-family: 'Hind Madurai', sans-serif;
 }
