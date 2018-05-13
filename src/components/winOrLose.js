@@ -4,18 +4,18 @@ import { connect } from 'react-redux'
 import { isWinner, wrongGuessLimit } from '../lib/gameLogic'
 
 class WinOrLose extends PureComponent {
-      static propTypes = {
+    static propTypes = {
         selectedWord: PropTypes.string.isRequired,
         victor: PropTypes.bool.isRequired,
-        moron: PropTypes.bool.isRequired
-      }
+        loser: PropTypes.bool.isRequired
+    }
 
     seeWinOrLose = () => {
         if (this.props.victor) {
-            return <p>Whoop!</p>
+            return <p>Whoop! You Won!</p>
         }
-        else if (this.props.moron) {
-            return <p>This is the word you didnt guess: {this.props.selectedWord}.</p>
+        else if (this.props.loser) {
+            return <p>Sucker, shoulve quessed this: {this.props.selectedWord}.</p>
         }
     }
 
@@ -32,7 +32,7 @@ const mapStateToProps = ({ selectedWord, lettersGuessed }) => {
     return {
         selectedWord,
         victor: isWinner(selectedWord, lettersGuessed),
-        moron: wrongGuessLimit(selectedWord, lettersGuessed)
+        loser: wrongGuessLimit(selectedWord, lettersGuessed)
     }
 }
 
