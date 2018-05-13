@@ -1,0 +1,31 @@
+.lettersBtn {
+    font-size: 20px;
+}
+
+.allBtns {
+    max-width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+button:hover {
+    color: black;
+    background-color: #666666;
+}
+
+button {
+    background-color: black;
+    border: none;
+    color: red;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: 'Hind Madurai', sans-serif;
+}
