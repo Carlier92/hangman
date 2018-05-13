@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { lettersGuessed } from '../actions/game'
 import { wrongGuessLimit } from '../lib/gameLogic'
+import './lettersToClick.css';
+
 
 class LettersToClick extends PureComponent {
     static propTypes = {
@@ -17,9 +19,9 @@ class LettersToClick extends PureComponent {
         const alphabet = Array.from({length: 26}, (_, i) => String.fromCharCode(97 + i))
 
         return (
-            <div>
+            <div className='allBtns'>
                 {alphabet.map( letter => {
-                    return <button key={letter} disabled={this.props.lost} onClick={() => {this.props.lettersGuessed(letter)}}>{letter}</button>
+                    return <button className='lettersBtn' key={letter} disabled={this.props.lost} onClick={() => {this.props.lettersGuessed(letter)}}>{letter}</button>
                 })}
             </div>
         )

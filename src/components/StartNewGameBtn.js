@@ -14,7 +14,7 @@ class StartNewGameBtn extends PureComponent {
 
     render() {
         return (
-            <button className="btn" onClick={this.handleOnClick}>New Game</button>
+            <button onClick={this.handleOnClick}>New Game</button>
         )
     }
 }

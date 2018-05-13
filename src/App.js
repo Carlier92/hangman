@@ -12,8 +12,8 @@ class App extends Component {
                 <h1 className="App-title">Welcome to the death of hangman</h1>
                 <Word />
                 <LettersToClick />
-                <StartNewGameBtn />
                 <WinOrLose />
+                <StartNewGameBtn />
             </div>
         )
     }
